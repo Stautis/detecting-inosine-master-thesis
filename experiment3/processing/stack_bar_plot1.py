@@ -6,8 +6,9 @@ from bokeh.io import export_png
 
 ################################################################################
 #
-# This script reads data pertaining to base identity at each of the 9 positions
-# we are interested in. These identity frequencies are then plotted with bokeh.
+# This script reads data regarding the basecall frequency for each of the 
+# 9 positions we are interested. This is specified for the first of the three
+# segments. These are then plotted in a stacked barplot with bokeh
 #
 ################################################################################
 
