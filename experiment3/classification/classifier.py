@@ -11,7 +11,8 @@ h2o.init()
 # all 9 positions in the segment. The response label can be specified to change
 # from a 2-way to a 5-way classification task. Here we train on the first 
 # segment, then we evaluate on the second segment. The response label here is 
-# the construct label, and so we are doing a 5-way classification.
+# the construct label, and so we are doing a 5-way classification. This data has
+# not been normalized.
 #
 ################################################################################
 
