@@ -2,6 +2,14 @@ import sys
 import csv
 import itertools
 
+################################################################################
+#
+# This script reads a .tsv file (eventalign output) and calculates statistics
+# for several regions of interest (specified by index relative to reference) and
+# prints these statistics for comparison.
+#
+################################################################################
+
 def restrict(low_bound, upper_bound):
 	print("\nRestricting area")
 	with open("run_ref_4/alkbh3_eventalign.tsv") as file:
