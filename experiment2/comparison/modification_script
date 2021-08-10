@@ -1,0 +1,24 @@
+import os
+import sys
+import csv
+
+################################################################################
+#
+# This script takes in the messy output file resulting from the 
+# compore_script.sh, it then removes all of that mess (in this case, exclamation
+# marks). And writes to a different file. 
+#
+################################################################################
+
+csv.field_size_limit(sys.maxsize)
+
+with open('/export/valenfs/data/processed_data/MinION/inosine_project/20201016_max_DNA_Inosine/second_analysis/19_6mer_comp_reprise/A_vs_I/results/out_nanocompore_results.tsv', 'r', newline='\n') as myfile:
+	with open('modified_compore_output.tsv','w',newline='\n') as newfile:
+		read = csv.reader(myfile, delimiter='\t')	
+		wr = csv.writer(newfile, delimiter='\t')
+		for num, row in enumerate(read):
+			if row[5].find('!')!=-1:
+				row[5] = row[5][:5]
+			wr.writerow(row)
+print("File successfully modified.")
+
