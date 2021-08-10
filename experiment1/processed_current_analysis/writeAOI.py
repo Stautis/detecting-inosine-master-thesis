@@ -1,5 +1,12 @@
 import csv
 
+################################################################################
+#
+# This script reads a specified .tsv file and prints an area of interest as 
+# indicated by a specified lower and upper bound (reference index positions).
+#
+################################################################################
+
 def restrict(low_bound, upper_bound):
         print("\nRestricting area")
         with open("run_ref_4/alkbh3_eventalign.tsv") as file:
