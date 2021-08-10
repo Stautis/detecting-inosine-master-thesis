@@ -4,7 +4,9 @@ import sys
 ################################################################################
 #
 # This script reads the output from ino_finder.py and extracts only the read ids
-# included. These are all the reads we are interested in. 
+# included. These are all the reads we are interested in. The resulting list is
+# used for subsetting the multi-fast5 file containing our reads. This is 
+# to be able to feasibly run further raw data analysis. 
 #
 ################################################################################
 
