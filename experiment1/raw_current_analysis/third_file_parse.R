@@ -963,17 +963,16 @@ box_thy <- data.frame(value = row_frame_2, variable = "T")
 box_gua <- data.frame(value = row_frame_3, variable = "G")
 box_cyt <- data.frame(value = row_frame_4, variable = "C")
 box_ade <- data.frame(value = row_frame_5, variable = "A")
-all_dat <- rbind(box_ino, box_thy, box_gua, box_cyt, box_ade)
+all_dat_pos <- rbind(box_ino, box_thy, box_gua, box_cyt, box_ade)
 
 #Write out data
-write.csv(all_dat,"expanded_current_row_variable_dataset.csv",row.names = FALSE)
+write.csv(all_dat_pos,"expanded_current_row_variable_dataset.csv",row.names = FALSE)
 
 #make reference boxplot
 ont_ref <- data.frame(value = c(90.679010,73.670019,98.890775,86.486336),sd=c(1.513907,1.512557,1.401820,1.517846), variable=c("T","G","C","A"))
-#make violinplot
 ggplot(ont_ref, aes(x=as.factor(variable))) + geom_boxplot(aes(lower=value-sd, upper=value+sd, middle=value, ymin=value-3*sd, ymax=value+3*sd),stat="identity")
 
-#overlay the boxplot over the violinplot
+#overlay the boxplot over a violinplot
 v <- ggplot(all_dat_pos, aes(x=variable, y=value, yScale="log2")) + geom_violin(scale="width") + ylim(1,150) + stat_summary(fun.y="sample",geom="point", aes(x="T", y=90.67)) + stat_summary(fun.y="sample",geom="point", aes(x="G", y=73.67)) + stat_summary(fun.y="sample",geom="point", aes(x="C", y=98.89)) +  stat_summary(fun.y="sample",geom="point", aes(x="A", y=86.49))
   
 
