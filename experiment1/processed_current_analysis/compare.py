@@ -1,5 +1,13 @@
 import sys
 
+################################################################################
+#
+# This script prints data from two identical positions from eventalign outputs
+# generated form the same set of reads but with different references. The printed
+# results can then be compared. 
+#
+################################################################################
+
 linesOne = open("run_ref_3/aoi.txt").read().splitlines()
 linesTwo = open("run_ref_4/aoi.txt").read().splitlines()
 currentId = ''
